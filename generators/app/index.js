@@ -6,11 +6,7 @@ module.exports = fountain.Base.extend({
     this.fountainPrompting();
   },
 
-  composing: function () {
-    this.composeWith('fountain-gulp', { options: this.props });
-  },
-
-  writing: {
+  configuring: {
     package: function () {
       this.mergeJson('package.json', {
         dependencies: {
@@ -24,16 +20,22 @@ module.exports = fountain.Base.extend({
       });
     },
 
-    src: function () {
-      this.fs.copyTpl(
-        this.templatePath('src'),
-        this.destinationPath('src'),
-        { modules: this.props.modules !== 'inject' }
-      );
-
+    babel: function () {
       this.mergeJson('.babelrc', {
         presets: ['react']
       });
     }
+  },
+
+  composing: function () {
+    this.composeWith('fountain-gulp', { options: this.props });
+  },
+
+  writing: function () {
+    this.fs.copyTpl(
+      this.templatePath('src'),
+      this.destinationPath('src'),
+      { modules: this.props.modules !== 'inject' }
+    );
   }
 });
