@@ -37,7 +37,7 @@ module.exports = fountain.Base.extend({
     this.fs.copyTpl(
       this.templatePath('src'),
       this.destinationPath('src'),
-      { modules: this.props.modules !== 'inject' }
+      this.props
     );
   }
 });
