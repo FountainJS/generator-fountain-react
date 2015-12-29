@@ -1,13 +1,13 @@
 const fountain = require('fountain-generator');
 
 module.exports = fountain.Base.extend({
-  prompting: function () {
+  prompting() {
     this.options.framework = 'react';
     this.fountainPrompting();
   },
 
   configuring: {
-    package: function () {
+    package() {
       this.mergeJson('package.json', {
         dependencies: {
           react: '0.14.3',
@@ -20,24 +20,30 @@ module.exports = fountain.Base.extend({
       });
     },
 
-    babel: function () {
+    babel() {
       this.mergeJson('.babelrc', {
         presets: ['react']
       });
     }
   },
 
-  composing: function () {
+  composing() {
     this.composeWith('fountain-gulp', { options: this.props }, {
       local: require.resolve('generator-fountain-gulp/generators/app')
     });
   },
 
-  writing: function () {
-    this.fs.copyTpl(
-      this.templatePath('src'),
-      this.destinationPath('src'),
-      this.props
-    );
+  writing() {
+    const files = [
+      'src/index.html',
+      'src/index.js',
+      'src/index.css',
+      'src/app/hello.js',
+      'src/app/hello.spec.js'
+    ];
+
+    files.map(file => {
+      this.copyTemplate(file, file);
+    });
   }
 });

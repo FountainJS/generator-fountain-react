@@ -1,10 +1,10 @@
 <% if (modules !== 'inject') { -%>
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Hello = require('./app/hello');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Hello } from './app/hello';
 
 <%   if (modules === 'webpack') { -%>
-require('./index.scss');
+import './index.scss'
 
 <%   } -%>
 <% } -%>

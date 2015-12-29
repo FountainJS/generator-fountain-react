@@ -1,13 +1,13 @@
-<% if (modules) { -%>
-import React, { Component } from 'react';
+<% if (modules !== 'inject') { -%>
+var React = require('react');
 
-export class Hello extends Component {
+module.exports = React.createClass({
 <% } else { -%>
-class Hello extends React.Component {
+module.exports = React.createClass({
 <% } -%>
-  render() {
+  render: function() {
     return (
       <h1>{'Hello world!'}</h1>
     );
   }
-}
+});

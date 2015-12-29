@@ -1,9 +1,9 @@
 <% if (modules !== 'inject') { -%>
-var React = require('react');
-var TestUtils = require('react/lib/ReactTestUtils');
-var Hello = require('./hello');
+import React from 'react';
+import TestUtils from 'react/lib/ReactTestUtils';
+import { Hello } from './hello';
 <% } else { -%>
-var TestUtils = React.addons.TestUtils;
+const TestUtils = React.addons.TestUtils;
 <% } -%>
 
 describe('hello component', function() {
