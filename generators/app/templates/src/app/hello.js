@@ -1,9 +1,15 @@
-<% if (modules !== 'inject') { -%>
+<% if (modules === 'webpack') { -%>
 var React = require('react');
 
 module.exports = React.createClass({
-<% } else { -%>
-module.exports = React.createClass({
+<% } -%>
+<% if (modules === 'systemjs') { -%>
+import React from 'react';
+
+export default React.createClass({
+<% } -%>
+<% if (modules === 'inject') { -%>
+var Hello = React.createClass({
 <% } -%>
   render: function() {
     return (

@@ -1,8 +1,14 @@
-<% if (modules !== 'inject') { -%>
+<% if (modules === 'webpack') { -%>
 var React = require('react');
 var TestUtils = require('react/lib/ReactTestUtils');
 var Hello = require('./hello');
-<% } else { -%>
+<% } -%>
+<% if (modules === 'systemjs') { -%>
+import React from 'react';
+import TestUtils from 'react/lib/ReactTestUtils';
+import Hello from './hello';
+<% } -%>
+<% if (modules === 'inject') { -%>
 var TestUtils = React.addons.TestUtils;
 <% } -%>
 

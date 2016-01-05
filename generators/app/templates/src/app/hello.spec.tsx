@@ -1,6 +1,8 @@
+/// <reference path="../../typings/tsd.d.ts" />
+
 <% if (modules !== 'inject') { -%>
-import React from 'react';
-import TestUtils from 'react/lib/ReactTestUtils';
+import * as React from 'react';
+import * as TestUtils from 'react-addons-test-utils';
 import { Hello } from './hello';
 <% } else { -%>
 const TestUtils = React.addons.TestUtils;

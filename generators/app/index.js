@@ -7,17 +7,25 @@ module.exports = fountain.Base.extend({
   },
 
   configuring: {
-    package() {
+    pkg() {
       this.mergeJson('package.json', {
         dependencies: {
-          react: '0.14.3',
-          'react-dom': '0.14.3'
+          'react': '^0.14.3',
+          'react-dom': '^0.14.3'
         },
         devDependencies: {
-          'babel-preset-react': '6.1.18',
-          'eslint-plugin-react': '3.10.0'
+          'babel-preset-react': '^6.1.18',
+          'eslint-plugin-react': '^3.10.0'
         }
       });
+
+      if (this.props.js === 'typescript') {
+        this.mergeJson('package.json', {
+          devDependencies: {
+            'react-addons-test-utils': '^0.14.5'
+          }
+        });
+      }
     },
 
     babel() {
