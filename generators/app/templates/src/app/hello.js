@@ -9,7 +9,7 @@ import React from 'react';
 export default React.createClass({
 <% } -%>
 <% if (modules === 'inject') { -%>
-var Hello = React.createClass({
+window.Hello = React.createClass({
 <% } -%>
   render: function() {
     return (

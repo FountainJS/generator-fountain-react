@@ -1,5 +1,7 @@
-<% if (modules !== 'babel') { -%>
+<% if (modules !== 'inject') { -%>
 import * as React from 'react';
+<% } else { -%>
+/// <reference path="../../typings/tsd.d.ts" />
 <% } -%>
 
 interface IHelloProps {};
