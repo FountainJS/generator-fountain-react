@@ -3,7 +3,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Hello = require('./app/hello');
 
-require('./index.scss');
+require('./index.<%- css %>');
 
 <% } -%>
 <% if (modules === 'systemjs') { -%>

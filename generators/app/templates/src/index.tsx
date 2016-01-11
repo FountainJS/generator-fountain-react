@@ -6,7 +6,7 @@ import * as ReactDOM from 'react-dom';
 import { Hello } from './app/hello';
 
 <%   if (modules === 'webpack') { -%>
-import './index.scss';
+import './index.<%- css %>';
 
 <%   } -%>
 <% } -%>
