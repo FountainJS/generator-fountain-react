@@ -1,9 +1,33 @@
 const fountain = require('fountain-generator');
 
 module.exports = fountain.Base.extend({
-  prompting() {
-    this.options.framework = 'react';
-    this.fountainPrompting();
+  prompting: {
+    fountain() {
+      this.options.framework = 'react';
+      this.fountainPrompting();
+    },
+
+    sample() {
+      const done = this.async();
+
+      this.option('sample', { type: Boolean, required: false });
+
+      const prompts = [{
+        when: !this.options.sample,
+        type: 'list',
+        name: 'sample',
+        message: 'Do you want a sample app?',
+        choices: [
+          { name: 'A working landing page', value: 'techs' },
+          { name: 'Just a Hello World', value: 'hello' }
+        ]
+      }];
+
+      this.prompt(prompts, props => {
+        Object.assign(this.props, this.options, props);
+        done();
+      });
+    }
   },
 
   configuring: {
@@ -36,22 +60,15 @@ module.exports = fountain.Base.extend({
   },
 
   composing() {
+    this.composeWith(`fountain-react:${this.props.sample}`, { options: this.props }, {
+      local: require.resolve(`../${this.props.sample}`)
+    });
     this.composeWith('fountain-gulp', { options: this.props }, {
       local: require.resolve('generator-fountain-gulp/generators/app')
     });
   },
 
   writing() {
-    const files = [
-      'src/index.html',
-      'src/index.js',
-      'src/index.css',
-      'src/app/hello.js',
-      'src/app/hello.spec.js'
-    ];
-
-    files.map(file => {
-      this.copyTemplate(file, file);
-    });
+    this.copyTemplate('src/index.html', 'src/index.html');
   }
 });
