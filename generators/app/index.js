@@ -10,7 +10,7 @@ module.exports = fountain.Base.extend({
     sample() {
       const done = this.async();
 
-      this.option('sample', { type: Boolean, required: false });
+      this.option('sample', {type: Boolean, required: false});
 
       const prompts = [{
         when: !this.options.sample,
@@ -18,8 +18,8 @@ module.exports = fountain.Base.extend({
         name: 'sample',
         message: 'Do you want a sample app?',
         choices: [
-          { name: 'A working landing page', value: 'techs' },
-          { name: 'Just a Hello World', value: 'hello' }
+          {name: 'A working landing page', value: 'techs'},
+          {name: 'Just a Hello World', value: 'hello'}
         ]
       }];
 
@@ -60,10 +60,10 @@ module.exports = fountain.Base.extend({
   },
 
   composing() {
-    this.composeWith(`fountain-react:${this.props.sample}`, { options: this.props }, {
+    this.composeWith(`fountain-react:${this.props.sample}`, {options: this.props}, {
       local: require.resolve(`../${this.props.sample}`)
     });
-    this.composeWith('fountain-gulp', { options: this.props }, {
+    this.composeWith('fountain-gulp', {options: this.props}, {
       local: require.resolve('generator-fountain-gulp/generators/app')
     });
   },
