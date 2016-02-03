@@ -1,4 +1,4 @@
-import { Component } from 'react';
+var React = require('react');
 
 const styles = {
   footer: {
@@ -7,10 +7,10 @@ const styles = {
     backgroundColor: '#26d9de',
     textAlign: 'center'
   }
-};
+}
 
-export class Footer extends Component {
-  render() {
+module.exports = React.createClass({
+  render: function () {
     return (
       <footer style={styles.footer}>
         Build with ♥ by the&nbsp;
@@ -20,4 +20,4 @@ export class Footer extends Component {
       </footer>
     );
   }
-}
+});

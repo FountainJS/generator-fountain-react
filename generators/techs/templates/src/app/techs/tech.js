@@ -1,4 +1,4 @@
-import { Component } from 'react';
+var React = require('react');
 
 const styles = {
   tech: {
@@ -19,10 +19,10 @@ const styles = {
     fontSize: '1.5rem',
     margin: '0 0 2rem 0'
   }
-};
+}
 
-export class Tech extends Component {
-  render() {
+module.exports = React.createClass({
+  render: function () {
     return (
       <div style={styles.tech}>
         <img style={styles.logo} src={this.props.tech.logo}/>
@@ -34,13 +34,4 @@ export class Tech extends Component {
       </div>
     );
   }
-}
-
-Tech.propTypes = {
-  tech: {
-    logo: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string.isRequired,
-    text1: React.PropTypes.string.isRequired,
-    text2: React.PropTypes.string.isRequired
-  }
-};
+});

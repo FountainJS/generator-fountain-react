@@ -1,6 +1,6 @@
-import { Component } from 'react';
+var React = require('react');
 
-const styles = {
+var styles = {
   header: {
     display: 'flex',
     alignItems: 'center',
@@ -16,10 +16,10 @@ const styles = {
     textAlign: 'right',
     margin: '1rem'
   }
-};
+}
 
-export class Header extends Component {
-  render() {
+module.exports = React.createClass({
+  render: function () {
     return (
       <header style={styles.header}>
         <p style={styles.title}>
@@ -33,4 +33,4 @@ export class Header extends Component {
       </header>
     );
   }
-}
+});
