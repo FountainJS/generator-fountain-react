@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import superagent from 'superagent';
 
-import { Tech } from './tech';
+import {Tech} from './tech';
 
 const styles = {
   container: {
@@ -17,19 +17,19 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around'
   }
-}
+};
 
 export class Techs extends Component {
   constructor() {
     super();
-    this.state = { techs: [] };
+    this.state = {techs: []};
   }
 
   componentDidMount() {
     superagent
       .get('app/techs/techs.json')
       .end((error, response) => {
-        this.setState({ techs: response.body });
+        this.setState({techs: response.body});
       });
   }
 
