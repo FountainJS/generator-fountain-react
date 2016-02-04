@@ -1,7 +1,7 @@
 var React = require('react');
-var superagent = require('superagent');
+var axios = require('axios');
 
-const styles = {
+var styles = {
   container: {
     margin: '1rem'
   },
@@ -23,10 +23,10 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function () {
-    superagent
+    axios
       .get('app/techs/techs.json')
-      .end((error, response) => {
-        this.setState({ techs: response.body });
+      .then(response => {
+        this.setState({ techs: response.data });
       });
   },
 

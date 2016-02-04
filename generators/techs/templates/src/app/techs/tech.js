@@ -1,6 +1,6 @@
 var React = require('react');
 
-const styles = {
+var styles = {
   tech: {
     height: '15rem',
     width: '15rem',

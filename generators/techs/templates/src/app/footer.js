@@ -1,6 +1,6 @@
 var React = require('react');
 
-const styles = {
+var styles = {
   footer: {
     padding: '0.5rem',
     fontSize: '1rem',

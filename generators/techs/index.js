@@ -8,7 +8,7 @@ module.exports = fountain.Base.extend({
   configuring() {
     this.mergeJson('package.json', {
       dependencies: {
-        superagent: '^1.6.1'
+        axios: '^0.9.1'
       }
     });
   },

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import superagent from 'superagent';
+import axios from 'axios';
 
 import {Tech} from './tech';
 
@@ -26,10 +26,10 @@ export class Techs extends Component {
   }
 
   componentDidMount() {
-    superagent
+    axios
       .get('app/techs/techs.json')
-      .end((error, response) => {
-        this.setState({techs: response.body});
+      .then(response => {
+        this.setState({techs: response.data});
       });
   }
 
