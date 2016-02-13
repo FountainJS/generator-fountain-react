@@ -11,6 +11,12 @@ module.exports = fountain.Base.extend({
         axios: '^0.9.1'
       }
     });
+
+    if (this.props.js === 'typescript') {
+      this.env.addToTsd = `"axios/axios.d.ts": {
+      "commit": "bcd5761826eb567876c197ccc6a87c4d05731054"
+    },`;
+    }
   },
 
   writing: {
