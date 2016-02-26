@@ -1,5 +1,6 @@
 var React = require('react');
 var axios = require('axios');
+var Tech = require('./tech');
 
 var styles = {
   container: {
@@ -25,9 +26,9 @@ module.exports = React.createClass({
   componentDidMount: function () {
     axios
       .get('app/techs/techs.json')
-      .then(response => {
+      .then(function(response) {
         this.setState({ techs: response.data });
-      });
+      }.bind(this));
   },
 
   render: function () {
@@ -37,9 +38,9 @@ module.exports = React.createClass({
           Cooked with all these awesome technologies:
         </h2>
         <div style={styles.techs}>
-          {this.state.techs.map((tech, i) => (
-            <Tech key={i} tech={tech}/>
-          ))}
+          {this.state.techs.map(function(tech, i) {
+            return <Tech key={i} tech={tech}/>;
+          })}
         </div>
       </div>
     );

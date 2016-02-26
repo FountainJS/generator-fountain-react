@@ -22,6 +22,10 @@ var styles = {
 }
 
 module.exports = React.createClass({
+  propTypes: {
+    tech: React.PropTypes.object.isRequired
+  },
+
   render: function () {
     return (
       <div style={styles.tech}>

@@ -37,10 +37,5 @@ export class Tech extends Component {
 }
 
 Tech.propTypes = {
-  tech: {
-    logo: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string.isRequired,
-    text1: React.PropTypes.string.isRequired,
-    text2: React.PropTypes.string.isRequired
-  }
+  tech: React.PropTypes.object.isRequired
 };
