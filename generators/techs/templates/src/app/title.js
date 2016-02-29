@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+var React = require('react');
 
-const styles = {
+var styles = {
   title: {
     display: 'flex',
     flexDirection: 'column',
@@ -27,8 +27,8 @@ const styles = {
   }
 };
 
-export class Title extends Component {
-  render() {
+module.exports = React.createClass({
+  render: function () {
     return (
       <div style={styles.title}>
         <h1 style={styles.h1}>'Allo, 'Allo!</h1>
@@ -40,4 +40,4 @@ export class Title extends Component {
       </div>
     );
   }
-}
+});

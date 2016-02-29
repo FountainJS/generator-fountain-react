@@ -1,10 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Hello = require('./app/hello');
+var Main = require('./app/main');
 
 require('./index.<%- css %>');
 
 ReactDOM.render(
-  <Hello/>,
+  <Main/>,
   document.getElementById('root')
 );

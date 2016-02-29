@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 const styles = {
   header: {
@@ -18,17 +18,21 @@ const styles = {
   }
 };
 
-export class Header extends Component {
+interface IHeaderProps {};
+
+interface IHeaderState {};
+
+export class Header extends React.Component<IHeaderProps, IHeaderState> {
   render() {
     return (
       <header style={styles.header}>
         <p style={styles.title}>
-          <a href="https://github.com/FountainJS/generator-fountain-webapp" target="_blank">
+          <a href='https://github.com/FountainJS/generator-fountain-webapp' target='_blank'>
             Foutain Generator
           </a>
         </p>
         <p style={styles.date}>
-          Generated with FountainJS v<%- version %> on <%- date %>
+          Generated with FountainJS
         </p>
       </header>
     );

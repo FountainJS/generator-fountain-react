@@ -1,4 +1,13 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+
+export class Tech {
+  constructor(
+    public title: string,
+    public text1: string,
+    public text2: string,
+    public logo: string
+  ) {}
+}
 
 const styles = {
   tech: {
@@ -21,7 +30,18 @@ const styles = {
   }
 };
 
-export class Tech extends Component {
+interface ITechProps {
+  key: number;
+  tech: Tech;
+};
+
+interface ITechState {};
+
+export class TechComponent extends React.Component<ITechProps, ITechState> {
+  static propTypes = {
+    tech: React.PropTypes.object.isRequired
+  };
+
   render() {
     return (
       <div style={styles.tech}>
@@ -35,7 +55,3 @@ export class Tech extends Component {
     );
   }
 }
-
-Tech.propTypes = {
-  tech: React.PropTypes.object.isRequired
-};

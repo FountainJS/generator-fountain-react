@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 const styles = {
   title: {
@@ -27,14 +27,18 @@ const styles = {
   }
 };
 
-export class Title extends Component {
+interface ITitleProps {};
+
+interface ITitleState {};
+
+export class Title extends React.Component<ITitleProps, ITitleState> {
   render() {
     return (
       <div style={styles.title}>
         <h1 style={styles.h1}>'Allo, 'Allo!</h1>
         <div>
-          <img style={styles.logo} src="https://raw.githubusercontent.com/FountainJS/generator-fountain-webapp/master/docs/assets/yeoman.png"/>
-          <img style={styles.logo} src="https://raw.githubusercontent.com/FountainJS/generator-fountain-webapp/master/docs/assets/fountain.png"/>
+          <img style={styles.logo} src='https://raw.githubusercontent.com/FountainJS/generator-fountain-webapp/master/docs/assets/yeoman.png'/>
+          <img style={styles.logo} src='https://raw.githubusercontent.com/FountainJS/generator-fountain-webapp/master/docs/assets/fountain.png'/>
         </div>
         <h2 style={styles.h2}>Always a pleasure scaffolding your apps.</h2>
       </div>

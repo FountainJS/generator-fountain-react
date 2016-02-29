@@ -8,31 +8,37 @@ module.exports = fountain.Base.extend({
   configuring() {
     this.mergeJson('package.json', {
       dependencies: {
-        superagent: '^1.6.1'
+        axios: '^0.9.1'
       }
     });
+
+    if (this.props.js === 'typescript') {
+      this.env.addToTsd = `"axios/axios.d.ts": {
+      "commit": "bcd5761826eb567876c197ccc6a87c4d05731054"
+    },`;
+    }
   },
 
-  writing() {
-    const files = [
-      'src/index.js',
-      'src/index.css',
-      'src/app/footer.js',
-      'src/app/header.js',
-      'src/app/main.js',
-      'src/app/title.js',
-      'src/app/techs/tech.js',
-      'src/app/techs/techs.js',
-      'src/app/techs/techs.json'
-    ];
+  writing: {
+    src() {
+      const files = [
+        'src/index.js',
+        'src/index.css',
+        'src/app/footer.js',
+        'src/app/header.js',
+        'src/app/main.js',
+        'src/app/title.js',
+        'src/app/techs/tech.js',
+        'src/app/techs/techs.js'
+      ];
 
-    files.map(file => {
-      this.copyTemplate(file, file);
-    });
+      files.map(file => {
+        this.copyTemplate(file, file);
+      });
+    },
 
-    this.fs.copy(
-      this.templatePath('src/assets'),
-      this.destinationPath('src/assets')
-    );
+    techs() {
+      this.prepareTechJson();
+    }
   }
 });

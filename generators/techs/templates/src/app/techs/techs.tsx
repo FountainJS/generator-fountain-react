@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import axios from 'axios';
+import * as React from 'react';
+import * as axios from 'axios';
 
-import {Tech} from './tech';
+import {Tech, TechComponent} from './tech';
 
 const styles = {
   container: {
@@ -19,7 +19,13 @@ const styles = {
   }
 };
 
-export class Techs extends Component {
+interface ITechsProps {};
+
+interface ITechsState {
+  techs: Tech[];
+};
+
+export class Techs extends React.Component<ITechsProps, ITechsState> {
   constructor() {
     super();
     this.state = {techs: []};
@@ -28,7 +34,7 @@ export class Techs extends Component {
   componentDidMount() {
     axios
       .get('app/techs/techs.json')
-      .then(response => {
+      .then((response: AxiosXHR<Tech[]>) => {
         this.setState({techs: response.data});
       });
   }
@@ -40,8 +46,8 @@ export class Techs extends Component {
           Cooked with all these awesome technologies:
         </h2>
         <div style={styles.techs}>
-          {this.state.techs.map((tech, i) => (
-            <Tech key={i} tech={tech}/>
+          {this.state.techs.map((tech: Tech, i: number) => (
+            <TechComponent key={i} tech={tech}/>
           ))}
         </div>
       </div>

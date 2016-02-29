@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+var React = require('react');
 
-const styles = {
+var styles = {
   footer: {
     padding: '0.5rem',
     fontSize: '1rem',
     backgroundColor: '#26d9de',
     textAlign: 'center'
   }
-};
+}
 
-export class Footer extends Component {
-  render() {
+module.exports = React.createClass({
+  render: function () {
     return (
       <footer style={styles.footer}>
         Build with ♥ by the&nbsp;
@@ -20,4 +20,4 @@ export class Footer extends Component {
       </footer>
     );
   }
-}
+});
