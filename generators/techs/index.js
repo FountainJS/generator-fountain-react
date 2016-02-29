@@ -21,7 +21,7 @@ module.exports = fountain.Base.extend({
 
   writing: {
     src() {
-      const files = [
+      [
         'src/index.js',
         'src/index.css',
         'src/app/footer.js',
@@ -30,11 +30,7 @@ module.exports = fountain.Base.extend({
         'src/app/title.js',
         'src/app/techs/tech.js',
         'src/app/techs/techs.js'
-      ];
-
-      files.map(file => {
-        this.copyTemplate(file, file);
-      });
+      ].map(file => this.copyTemplate(file, file));
     },
 
     techs() {
