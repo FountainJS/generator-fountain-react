@@ -16,18 +16,18 @@ var styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around'
   }
-}
+};
 
 module.exports = React.createClass({
-  getInitialState: function() {
-    return { techs: [] };
+  getInitialState: function () {
+    return {techs: []};
   },
 
   componentDidMount: function () {
     axios
       .get('app/techs/techs.json')
-      .then(function(response) {
-        this.setState({ techs: response.data });
+      .then(function (response) {
+        this.setState({techs: response.data});
       }.bind(this));
   },
 
@@ -38,7 +38,7 @@ module.exports = React.createClass({
           Cooked with all these awesome technologies:
         </h2>
         <div style={styles.techs}>
-          {this.state.techs.map(function(tech, i) {
+          {this.state.techs.map(function (tech, i) {
             return <Tech key={i} tech={tech}/>;
           })}
         </div>

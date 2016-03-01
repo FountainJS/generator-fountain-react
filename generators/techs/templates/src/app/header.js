@@ -16,7 +16,7 @@ var styles = {
     textAlign: 'right',
     margin: '1rem'
   }
-}
+};
 
 module.exports = React.createClass({
   render: function () {
