@@ -34,7 +34,7 @@ export class Techs extends React.Component<ITechsProps, ITechsState> {
   componentDidMount() {
     axios
       .get('app/techs/techs.json')
-      .then((response: AxiosXHR<Tech[]>) => {
+      .then((response: Axios.AxiosXHR<Tech[]>) => {
         this.setState({techs: response.data});
       });
   }
