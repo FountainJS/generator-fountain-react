@@ -19,7 +19,7 @@ var styles = {
     fontSize: '1.5rem',
     margin: '0 0 2rem 0'
   }
-}
+};
 
 module.exports = React.createClass({
   propTypes: {

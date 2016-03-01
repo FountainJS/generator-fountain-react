@@ -7,7 +7,7 @@ var styles = {
     backgroundColor: '#26d9de',
     textAlign: 'center'
   }
-}
+};
 
 module.exports = React.createClass({
   render: function () {
