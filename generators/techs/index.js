@@ -8,7 +8,8 @@ module.exports = fountain.Base.extend({
   configuring() {
     this.mergeJson('package.json', {
       dependencies: {
-        axios: '^0.9.1'
+        'axios': '^0.9.1',
+        'es6-promise': '^3.1.2'
       }
     });
 
