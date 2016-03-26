@@ -36,47 +36,8 @@ module.exports = fountain.Base.extend({
         dependencies: {
           'react': '^0.14.3',
           'react-dom': '^0.14.3'
-        },
-        devDependencies: {
-          'babel-preset-react': '^6.1.18',
-          'eslint': '^1.10.3',
-          'eslint-config-xo-react': '^0.3.0',
-          'eslint-config-xo-space': '^0.8.0',
-          'eslint-plugin-react': '^3.10.0'
-        },
-        eslintConfig: {
-          extends: [
-            'xo-react'
-          ],
-          env: {
-            browser: true
-          }
         }
       });
-
-      if (this.props.js === 'babel') {
-        this.mergeJson('package.json', {
-          devDependencies: {
-            'babel-eslint': '^5.0.0-beta6',
-            'eslint-plugin-babel': '^3.0.0'
-          },
-          eslintConfig: {
-            extends: [
-              'xo-space/esnext'
-            ]
-          }
-        });
-      }
-
-      if (this.props.js === 'js') {
-        this.mergeJson('package.json', {
-          eslintConfig: {
-            extends: [
-              'xo-space'
-            ]
-          }
-        });
-      }
 
       if (this.props.js === 'typescript') {
         this.mergeJson('package.json', {
