@@ -39,13 +39,12 @@ module.exports = fountain.Base.extend({
         }
       });
 
-      if (this.props.js === 'typescript') {
-        this.mergeJson('package.json', {
-          devDependencies: {
-            'react-addons-test-utils': '^0.14.5'
-          }
-        });
-      }
+      this.mergeJson('package.json', {
+        devDependencies: {
+          'enzyme': '^2.2.0',
+          'react-addons-test-utils': '^0.14.8'
+        }
+      });
     },
 
     babel() {
