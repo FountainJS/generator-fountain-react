@@ -1,0 +1,14 @@
+/* eslint-disable no-unused-expressions */
+
+'use strict';
+
+import React from 'react';
+import {shallow} from 'enzyme';
+
+import {Footer} from './footer';
+
+describe('Footer', () => {
+  it('should be a footer', () => {
+    shallow(<Footer/>).is('footer').should.be.true;
+  });
+});
