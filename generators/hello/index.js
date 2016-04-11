@@ -14,7 +14,7 @@ module.exports = fountain.Base.extend({
     ];
 
     files.map(file => {
-      this.copyTemplate(file, file);
+      return this.copyTemplate(file, file);
     });
   }
 });
