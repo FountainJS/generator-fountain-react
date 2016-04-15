@@ -24,6 +24,7 @@ module.exports = fountain.Base.extend({
         'src/index.js',
         'src/index.css',
         'src/app/footer.js',
+        'src/app/footer.spec.js',
         'src/app/header.js',
         'src/app/main.js',
         'src/app/title.js',
