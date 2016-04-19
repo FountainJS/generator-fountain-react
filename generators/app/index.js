@@ -41,7 +41,6 @@ module.exports = fountain.Base.extend({
 
       this.mergeJson('package.json', {
         devDependencies: {
-          'enzyme': '^2.2.0',
           'react-addons-test-utils': '^0.14.8'
         }
       });
