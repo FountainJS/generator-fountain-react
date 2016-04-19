@@ -24,12 +24,13 @@ module.exports = fountain.Base.extend({
         'src/index.js',
         'src/index.css',
         'src/app/footer.js',
+        'src/app/footer.spec.js',
         'src/app/header.js',
         'src/app/main.js',
         'src/app/title.js',
         'src/app/techs/tech.js',
         'src/app/techs/techs.js'
-      ].map(file => this.copyTemplate(file, file));
+      ].map(file => this.copyTemplate(file, file, {modules: this.props.modules}));
     },
 
     techs() {
