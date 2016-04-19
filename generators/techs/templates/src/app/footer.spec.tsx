@@ -1,5 +1,7 @@
+/// <reference path="../../typings/main.d.ts" />
+
 /* tslint:disable:no-unused-variable */
-import React from 'react';
+import * as React from 'react';
 import {shallow} from 'enzyme';
 
 import {Footer} from './footer';
