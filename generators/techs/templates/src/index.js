@@ -1,4 +1,4 @@
-require('es6-promise');
+require('babel-polyfill');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
