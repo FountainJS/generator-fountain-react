@@ -34,14 +34,14 @@ module.exports = fountain.Base.extend({
     pkg() {
       this.mergeJson('package.json', {
         dependencies: {
-          'react': '^0.14.3',
-          'react-dom': '^0.14.3'
+          'react': '^15.0.1',
+          'react-dom': '^15.0.1'
         }
       });
 
       this.mergeJson('package.json', {
         devDependencies: {
-          'react-addons-test-utils': '^0.14.8'
+          'react-addons-test-utils': '^15.0.1'
         }
       });
     },
