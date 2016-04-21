@@ -12,7 +12,7 @@ module.exports = fountain.Base.extend({
 
       this.option('sample', {type: Boolean, required: false});
 
-      const prompts = [{
+      const prompts = {
         when: !this.options.sample,
         type: 'list',
         name: 'sample',
@@ -21,7 +21,11 @@ module.exports = fountain.Base.extend({
           {name: 'A working landing page', value: 'techs'},
           {name: 'Just a Hello World', value: 'hello'}
         ]
-      }];
+      };
+
+      if (this.props.js === 'babel' && this.props.modules === 'webpack') {
+        prompts.choices.push({name: 'Redux TodoApp', value: 'todoApp'});
+      }
 
       this.prompt(prompts, props => {
         Object.assign(this.props, this.options, props);
