@@ -1,0 +1,34 @@
+import React, {Component, PropTypes} from 'react';
+
+class Todo extends Component {
+  constructor(props) {
+    super(props);
+    this.handleOnClick = this.handleOnClick.bind(this);
+  }
+
+  render() {
+    return (
+      <li
+        onClick={this.handleOnClick}
+        style={{
+          textDecoration: this.props.completed ? 'line-through' : 'none'
+        }}
+        >
+        {this.props.text}
+      </li>
+    );
+  }
+
+  handleOnClick() {
+    this.props.onTodoClick(this.props.todoId);
+  }
+}
+
+Todo.propTypes = {
+  onTodoClick: PropTypes.func.isRequired,
+  todoId: PropTypes.number.isRequired,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired
+};
+
+export default Todo;
