@@ -30,7 +30,7 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
       <header style={styles.header}>
         <p style={styles.title}>
           <a href='https://github.com/FountainJS/generator-fountain-webapp' target='_blank'>
-            Foutain Generator
+            Fountain Generator
           </a>
         </p>
         <p style={styles.date}>
