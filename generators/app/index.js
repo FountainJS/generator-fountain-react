@@ -23,8 +23,8 @@ module.exports = fountain.Base.extend({
         ]
       };
 
-      if (this.props.js === 'babel' && this.props.modules === 'webpack') {
-        prompts.choices.push({name: 'Redux TodoApp', value: 'todoApp'});
+      if (this.props.js !== 'typescript' && this.props.modules === 'webpack') {
+        prompts.choices.push({name: 'Redux TodoMVC', value: 'todoMVC'});
       }
 
       this.prompt(prompts, props => {
