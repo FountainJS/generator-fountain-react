@@ -1,10 +1,6 @@
 const fountain = require('fountain-generator');
 
 module.exports = fountain.Base.extend({
-  prompting() {
-    this.fountainPrompting();
-  },
-
   configuring() {
     this.mergeJson('package.json', {
       dependencies: {
@@ -12,7 +8,7 @@ module.exports = fountain.Base.extend({
       }
     });
 
-    if (this.props.js === 'typescript') {
+    if (this.options.js === 'typescript') {
       this.mergeJson('package.json', {
         dependencies: {
           'es6-promise': '^3.1.2'
@@ -34,7 +30,7 @@ module.exports = fountain.Base.extend({
         'src/app/title.js',
         'src/app/techs/tech.js',
         'src/app/techs/techs.js'
-      ].map(file => this.copyTemplate(file, file, {modules: this.props.modules}));
+      ].map(file => this.copyTemplate(file, file, {modules: this.options.modules}));
     },
 
     techs() {
