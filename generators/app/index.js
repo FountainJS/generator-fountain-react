@@ -4,12 +4,10 @@ module.exports = fountain.Base.extend({
   prompting: {
     fountain() {
       this.options.framework = 'react';
-      this.fountainPrompting();
+      return this.fountainPrompting();
     },
 
     sample() {
-      const done = this.async();
-
       this.option('sample', {type: Boolean, required: false});
 
       const prompts = {
@@ -27,9 +25,8 @@ module.exports = fountain.Base.extend({
         prompts.choices.push({name: 'Redux TodoMVC', value: 'todoMVC'});
       }
 
-      this.prompt(prompts, props => {
+      return this.prompt(prompts).then(props => {
         Object.assign(this.props, props);
-        done();
       });
     }
   },
