@@ -17,13 +17,10 @@ module.exports = fountain.Base.extend({
         message: 'Do you want a sample app?',
         choices: [
           {name: 'A working landing page', value: 'techs'},
-          {name: 'Just a Hello World', value: 'hello'}
+          {name: 'Just a Hello World', value: 'hello'},
+          {name: 'Redux TodoMVC', value: 'todoMVC'}
         ]
       };
-
-      if (this.props.js !== 'typescript' && this.props.modules === 'webpack') {
-        prompts.choices.push({name: 'Redux TodoMVC', value: 'todoMVC'});
-      }
 
       return this.prompt(prompts).then(props => {
         Object.assign(this.props, props);
@@ -65,8 +62,10 @@ module.exports = fountain.Base.extend({
       sample: this.props.sample
     };
 
+    const modules = this.props.sample === 'todoMVC' ? `/${this.props.modules === 'inject' ? 'inject' : 'modules'}` : '';
+
     this.composeWith(`fountain-react:${this.props.sample}`, {options}, {
-      local: require.resolve(`../${this.props.sample}`)
+      local: require.resolve(`../${this.props.sample}${modules}`)
     });
     this.composeWith('fountain-gulp', {options}, {
       local: require.resolve('generator-fountain-gulp/generators/app')
