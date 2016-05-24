@@ -39,8 +39,8 @@ export class Title extends React.Component<ITitleProps, ITitleState> {
       <div style={styles.title}>
         <h1 style={styles.h1}>'Allo, 'Allo!</h1>
         <div>
-          <img style={styles.logo} src='https://raw.githubusercontent.com/FountainJS/generator-fountain-webapp/master/docs/assets/yeoman.png'/>
-          <img style={styles.logo} src='https://raw.githubusercontent.com/FountainJS/generator-fountain-webapp/master/docs/assets/fountain.png'/>
+          <img style={styles.logo} src='http://fountainjs.io/assets/imgs/yeoman.png'/>
+          <img style={styles.logo} src='http://fountainjs.io/assets/imgs/fountain.png'/>
         </div>
         <h2 style={styles.h2}>Always a pleasure scaffolding your apps.</h2>
       </div>
