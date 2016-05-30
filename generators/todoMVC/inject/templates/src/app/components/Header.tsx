@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/main.d.ts" />
+/// <reference path="../../../typings/index.d.ts" />
 
 interface IHeaderProps {
   addTodo: (text: string) => void;

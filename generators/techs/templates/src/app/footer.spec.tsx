@@ -1,4 +1,4 @@
-/// <reference path="../../typings/main.d.ts" />
+/// <reference path="../../typings/index.d.ts" />
 
 /* tslint:disable:no-unused-variable */
 import * as React from 'react';
