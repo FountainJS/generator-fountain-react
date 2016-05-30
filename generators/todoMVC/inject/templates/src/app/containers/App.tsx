@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/main.d.ts" />
+/// <reference path="../../../typings/index.d.ts" />
 
 const bindActionCreators = Redux.bindActionCreators;
 const connect = ReactRedux.connect;
