@@ -8,9 +8,7 @@ module.exports = fountain.Base.extend({
         'react-dom': '^15.0.1',
         'react-redux': '^4.4.5',
         'redux': '^3.5.1',
-        'es6-shim': '^0.35.0'
-      },
-      devDependencies: {
+        'es6-shim': '^0.35.0',
         'todomvc-app-css': '^2.0.4'
       }
     });
