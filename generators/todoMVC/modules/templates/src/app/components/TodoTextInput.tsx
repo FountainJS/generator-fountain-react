@@ -40,7 +40,7 @@ class TodoTextInput extends React.Component<ITodoTextInputProps, ITodoTextInputS
 
   handleSubmit(e: any) {
     const text = e.target.value.trim();
-    if (e.which === 13) {
+    if (e.which === 13 && this.state.text.length) {
       this.props.onSave(text);
       if (this.props.newTodo) {
         this.setState({text: ''});
@@ -53,7 +53,7 @@ class TodoTextInput extends React.Component<ITodoTextInputProps, ITodoTextInputS
   }
 
   handleBlur(e: any) {
-    if (!this.props.newTodo) {
+    if (!this.props.newTodo && this.state.text.length) {
       this.props.onSave(e.target.value);
     }
   }
