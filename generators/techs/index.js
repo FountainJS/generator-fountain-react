@@ -14,7 +14,6 @@ module.exports = fountain.Base.extend({
           'es6-promise': '^3.1.2'
         }
       });
-      this.env.addToTsd = `"axios": "github:DefinitelyTyped/DefinitelyTyped/axios/axios.d.ts#bcd5761826eb567876c197ccc6a87c4d05731054",`;
     }
   },
 
