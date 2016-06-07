@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../typings/index.d.ts" />
 
 <% if (modules !== 'inject') { -%>
 import * as React from 'react';
