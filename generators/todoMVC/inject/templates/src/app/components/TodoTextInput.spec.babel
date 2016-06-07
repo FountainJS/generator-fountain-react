@@ -56,12 +56,6 @@ describe('components', () => {
       expect(props.onSave).toHaveBeenCalledWith('Use Redux');
     });
 
-    it('should not call onSave on return key press if text is empty', () => {
-      const {output, props} = todoTextInputSetup({text: ''});
-      output.props.onKeyDown({which: 13, target: {value: ''}});
-      expect(props.onSave).not.toHaveBeenCalled();
-    });
-
     it('should reset state on return key press if newTodo', () => {
       const {output, renderer} = todoTextInputSetup({newTodo: true});
       output.props.onKeyDown({which: 13, target: {value: 'Use Redux'}});
@@ -79,12 +73,6 @@ describe('components', () => {
       const {output, props} = todoTextInputSetup({newTodo: true});
       output.props.onBlur({target: {value: 'Use Redux'}});
       expect(props.onSave.calls.count()).toBe(0);
-    });
-
-    it('should not call onSave on blur if text is empty', () => {
-      const {output, props} = todoTextInputSetup({text: ''});
-      output.props.onBlur({target: {value: ''}});
-      expect(props.onSave).not.toHaveBeenCalled();
     });
   });
 });

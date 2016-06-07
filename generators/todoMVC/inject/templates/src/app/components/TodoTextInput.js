@@ -15,7 +15,7 @@ var TodoTextInput = React.createClass({
 
   handleSubmit: function (e) {
     var text = e.target.value.trim();
-    if (e.which === 13 && this.state.text.length) {
+    if (e.which === 13) {
       this.props.onSave(text);
       if (this.props.newTodo) {
         this.setState({text: ''});
@@ -28,7 +28,7 @@ var TodoTextInput = React.createClass({
   },
 
   handleBlur: function (e) {
-    if (!this.props.newTodo && this.state.text.length) {
+    if (!this.props.newTodo) {
       this.props.onSave(e.target.value);
     }
   },
