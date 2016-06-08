@@ -11,7 +11,7 @@ module.exports = fountain.Base.extend({
     sample() {
       this.option('sample', {type: Boolean, required: false});
 
-      const prompts = {
+      const prompts = [{
         when: !this.options.sample,
         type: 'list',
         name: 'sample',
@@ -21,7 +21,16 @@ module.exports = fountain.Base.extend({
           {name: 'Just a Hello World', value: 'hello'},
           {name: 'Redux TodoMVC', value: 'todoMVC'}
         ]
-      };
+      }, {
+        when: !this.options.router,
+        type: 'list',
+        name: 'router',
+        message: 'Would you like a router?',
+        choices: [
+          {name: 'React router', value: 'router'},
+          {name: 'None', value: 'none'}
+        ]
+      }];
 
       return this.prompt(prompts).then(props => {
         Object.assign(this.props, props);
@@ -42,6 +51,22 @@ module.exports = fountain.Base.extend({
           'react-dom': '^15.0.1'
         }
       });
+
+      if (this.props.router === 'router') {
+        if (this.props.modules === 'inject') {
+          this.mergeJson('package.json', {
+            dependencies: {
+              'react-router': 'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.4.1/ReactRouter.min.js'
+            }
+          });
+        } else {
+          this.mergeJson('package.json', {
+            dependencies: {
+              'react-router': '^2.4.0'
+            }
+          });
+        }
+      }
 
       this.mergeJson('package.json', {
         devDependencies: {
@@ -65,6 +90,7 @@ module.exports = fountain.Base.extend({
       modules: this.props.modules,
       js: this.props.js,
       css: this.props.css,
+      router: this.props.router,
       sample: this.props.sample
     };
 
