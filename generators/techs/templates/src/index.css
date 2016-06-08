@@ -9,10 +9,10 @@ body, h1, h2, h3 {
 }
 
 a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: #155050;
+  color: #5aadbb;
 }
