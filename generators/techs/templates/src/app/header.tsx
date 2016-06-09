@@ -6,7 +6,7 @@ const styles = {
   header: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#26d9de'
+    backgroundColor: '#1f1f1f'
   },
   title: {
     flex: 1,
@@ -16,7 +16,8 @@ const styles = {
   date: {
     flex: 1,
     textAlign: 'right',
-    margin: '1rem'
+    margin: '1rem',
+    color: 'white'
   }
 };
 
