@@ -54,9 +54,6 @@
   },
   "license": "MIT",
   "eslintConfig": {
-    "extends": "xo-space/esnext",
-    "env": {
-      "mocha": true
-    }
+    "extends": "xo-space/esnext"
   }
 }
