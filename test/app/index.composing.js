@@ -23,7 +23,9 @@ test(`Call this.composeWith twice and add 'inject' prefix when sample is 'todoMV
     js: context.props.js,
     css: context.props.css,
     router: context.props.router,
-    sample: context.props.sample
+    sample: context.props.sample,
+    skipInstall: context.props.skipInstall,
+    skipCache: context.props.skipCache
   };
   expect(spy).to.have.been.called.twice();
   expect(spy).to.have.been.called.with(`fountain-react:todoMVC`, {options}, {local: require.resolve('../../generators/todoMVC/inject')});
@@ -40,7 +42,9 @@ test(`Call this.composeWith twice and add 'modules' prefix when sample is 'todoM
     js: context.props.js,
     css: context.props.css,
     router: context.props.router,
-    sample: context.props.sample
+    sample: context.props.sample,
+    skipInstall: context.props.skipInstall,
+    skipCache: context.props.skipCache
   };
   expect(spy).to.have.been.called.twice();
   expect(spy).to.have.been.called.with(`fountain-react:todoMVC`, {options}, {local: require.resolve('../../generators/todoMVC/modules')});
@@ -57,7 +61,9 @@ test(`Call this.composeWith twice and add no prefix when sample is different of 
     js: context.props.js,
     css: context.props.css,
     router: context.props.router,
-    sample: context.props.sample
+    sample: context.props.sample,
+    skipInstall: context.props.skipInstall,
+    skipCache: context.props.skipCache
   };
   expect(spy).to.have.been.called.twice();
   expect(spy).to.have.been.called.with(`fountain-react:techs`, {options}, {local: require.resolve('../../generators/techs')});
