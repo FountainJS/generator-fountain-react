@@ -91,7 +91,9 @@ module.exports = fountain.Base.extend({
       js: this.props.js,
       css: this.props.css,
       router: this.props.router,
-      sample: this.props.sample
+      sample: this.props.sample,
+      skipInstall: this.props.skipInstall,
+      skipCache: this.props.skipCache
     };
 
     const modules = this.props.sample === 'todoMVC' ? `/${this.props.modules === 'inject' ? 'inject' : 'modules'}` : '';
