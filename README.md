@@ -6,6 +6,7 @@
 
 [![Build Status](https://travis-ci.org/FountainJS/generator-fountain-react.svg?branch=master)](https://travis-ci.org/FountainJS/generator-fountain-react)
 [![codecov](https://codecov.io/gh/FountainJS/generator-fountain-react/branch/master/graph/badge.svg)](https://codecov.io/gh/FountainJS/generator-fountain-react)
+[![Slack](http://slackin.fountainjs.io/badge.svg)](http://slackin.fountainjs.io/)
 
 # Fountain React Generator
 
