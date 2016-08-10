@@ -1,7 +1,8 @@
 /// <reference path="../../../typings/index.d.ts" />
 
 import * as React from 'react';
-import {bindActionCreators, IDispatch} from 'redux';
+import {IDispatch} from '~react-redux~redux';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 import MainSection from '../components/MainSection';
