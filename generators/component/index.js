@@ -12,7 +12,7 @@ module.exports = fountain.Base.extend({
       className: titleCase(name),
       modules: this.config.get('props').modules,
       js: this.config.get('props').js,
-      framework: this.config.get('props').framework,
+      framework: 'react',
       typings
     };
     this.copyTemplate(`src/app/component.js`, `src/${path}/${name}.js`, props);
