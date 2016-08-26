@@ -50,8 +50,14 @@ test(`Add 'router' cdn url to package.json dependencies`, t => {
   t.is(context.mergeJson['package.json'].dependencies['react-router'], 'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.4.1/ReactRouter.min.js');
 });
 
-test(`Add 'react' to '.babelrc'`, t => {
-  context.props = {js: 'babel'};
+test(`Add 'react' to '.babelrc' when modules is 'webpack'`, t => {
+  context.props = {js: 'babel', modules: 'webpack'};
+  TestUtils.call(context, 'configuring.babel');
+  t.deepEqual(context.mergeJson['.babelrc'].env.production.presets, ['react']);
+});
+
+test(`Add 'react' to '.babelrc' when modules is 'systemjs'`, t => {
+  context.props = {js: 'babel', modules: 'systemjs'};
   TestUtils.call(context, 'configuring.babel');
   t.deepEqual(context.mergeJson['.babelrc'].presets, ['react']);
 });
