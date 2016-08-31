@@ -12,7 +12,7 @@
 
 [![React](http://fountainjs.io/assets/imgs/react.png)](https://facebook.github.io/react/)
 
-> This Yeoman generator allows you to start an Angular1 web app with the best Developer Experience out of the box!
+> This Yeoman generator allows you to start a React web app with the best Developer Experience out of the box!
 
 > No matter what framework or module management you want to use, we got you covered with a cutting edge working configuration.
 
