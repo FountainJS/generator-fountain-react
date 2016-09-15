@@ -78,16 +78,8 @@ module.exports = fountain.Base.extend({
     babel() {
       if (this.props.js !== 'typescript') {
         const presets = ['react'];
-        if (this.props.modules === 'webpack') {
-          this.mergeJson('.babelrc', {
-            env: {
-              development: {presets},
-              production: {presets}
-            }
-          });
-        } else {
-          this.mergeJson('.babelrc', {presets});
-        }
+
+        this.mergeJson('.babelrc', {presets});
       }
     }
   },
