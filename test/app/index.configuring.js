@@ -53,7 +53,7 @@ test(`Add 'router' cdn url to package.json dependencies`, t => {
 test(`Add 'react' to '.babelrc' when modules is 'webpack'`, t => {
   context.props = {js: 'babel', modules: 'webpack'};
   TestUtils.call(context, 'configuring.babel');
-  t.deepEqual(context.mergeJson['.babelrc'].env.production.presets, ['react']);
+  t.deepEqual(context.mergeJson['.babelrc'].presets, ['react']);
 });
 
 test(`Add 'react' to '.babelrc' when modules is 'systemjs'`, t => {
