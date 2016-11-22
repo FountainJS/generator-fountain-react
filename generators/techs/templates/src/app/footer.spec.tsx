@@ -12,7 +12,7 @@ describe('Footer', () => {
 <% } else { -%>
     const footer = TestUtils.renderIntoDocument(<Footer/>);
 <% } -%>
-    const footerNode = ReactDOM.findDOMNode(footer);
+    const footerNode = ReactDOM.findDOMNode(footer as React.ReactInstance);
     expect(footerNode.tagName).toEqual('FOOTER');
   });
 });
