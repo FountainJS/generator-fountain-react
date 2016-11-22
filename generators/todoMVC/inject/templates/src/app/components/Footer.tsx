@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
   [SHOW_ACTIVE]: 'Active',

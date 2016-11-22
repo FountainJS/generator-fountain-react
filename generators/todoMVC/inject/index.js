@@ -10,6 +10,10 @@ module.exports = fountain.Base.extend({
         'redux': 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.js',
         'todomvc-app-css': '^2.0.4',
         'es6-shim': '^0.35.0'
+      },
+      devDependencies: {
+        '@types/classnames': '^0.0.31',
+        '@types/react-redux': '^4.4.32'
       }
     });
   },

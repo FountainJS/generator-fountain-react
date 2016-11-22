@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 interface ITodoTextInputProps {
   onSave: (text: string) => void;
   text?: string;

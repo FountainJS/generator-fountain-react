@@ -10,6 +10,10 @@ module.exports = fountain.Base.extend({
         'redux': '^3.5.1',
         'es6-shim': '^0.35.0',
         'todomvc-app-css': '^2.0.4'
+      },
+      devDependencies: {
+        '@types/classnames': '^0.0.31',
+        '@types/react-redux': '^4.4.32'
       }
     });
   },

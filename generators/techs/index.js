@@ -5,6 +5,9 @@ module.exports = fountain.Base.extend({
     this.mergeJson('package.json', {
       dependencies: {
         axios: '^0.9.1'
+      },
+      devDependencies: {
+        '@types/axios': '^0.9.32'
       }
     });
 

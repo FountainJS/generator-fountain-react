@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,
   [SHOW_ACTIVE]: todo => !todo.completed,

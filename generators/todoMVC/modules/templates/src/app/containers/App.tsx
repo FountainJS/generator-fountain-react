@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 import * as React from 'react';
 import {IDispatch} from '~react-redux~redux';
 import {bindActionCreators} from 'redux';

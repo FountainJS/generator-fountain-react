@@ -1,5 +1,3 @@
-/// <reference path="<%- typings %>"/>
-
 <% if (modules !== 'inject') { -%>
 import * as React from 'react';
 

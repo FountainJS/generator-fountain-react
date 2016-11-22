@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 import * as React from 'react';
 <% if (modules === 'webpack') { -%>
 import * as classnames from 'classnames';

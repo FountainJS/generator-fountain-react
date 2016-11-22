@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 /* tslint:disable:no-unused-variable */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
