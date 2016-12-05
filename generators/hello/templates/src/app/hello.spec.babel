@@ -1,7 +1,7 @@
 /* eslint-env jasmine */
 <% if (modules !== 'inject') { -%>
 import React from 'react';
-import TestUtils from 'react/lib/ReactTestUtils';
+import TestUtils from 'react-dom/lib/ReactTestUtils';
 import {Hello} from './hello';
 <% } else { -%>
 const TestUtils = React.addons.TestUtils;

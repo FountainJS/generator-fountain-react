@@ -1,12 +1,12 @@
 /* eslint-env jasmine */
 <% if (modules === 'webpack') { -%>
 var React = require('react');
-var TestUtils = require('react/lib/ReactTestUtils');
+var TestUtils = require('react-dom/lib/ReactTestUtils');
 var Hello = require('./hello');
 <% } -%>
 <% if (modules === 'systemjs') { -%>
 import React from 'react';
-import TestUtils from 'react/lib/ReactTestUtils';
+import TestUtils from 'react-dom/lib/ReactTestUtils';
 import Hello from './hello';
 <% } -%>
 <% if (modules === 'inject') { -%>
