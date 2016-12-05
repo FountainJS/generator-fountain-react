@@ -8,7 +8,7 @@ describe('<%- className %> component', function () {
 });
 <% } else { -%>
 import React from 'react';
-import TestUtils from 'react/lib/ReactTestUtils';
+import TestUtils from 'react-dom/lib/ReactTestUtils';
 import <%- className %> from './<%- componentName %>.js';
 
 describe('<%- className %> component', function () {
