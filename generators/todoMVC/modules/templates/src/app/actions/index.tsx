@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 import * as types from '../constants/ActionTypes';
 
 export function addTodo(text: string) {

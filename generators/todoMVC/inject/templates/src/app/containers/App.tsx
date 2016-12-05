@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 const bindActionCreators = Redux.bindActionCreators;
 const connect = ReactRedux.connect;
 

@@ -1,5 +1,3 @@
-/// <reference path="<%- typings %>" />
-
 <% if (modules === 'inject') { -%>
 describe('<%- className %> component', () => {
   it('should render title', () => {

@@ -37,14 +37,16 @@ test.before(() => {
   process.chdir('../../../');
 });
 
-test(`Add deps to package.json dependencies`, () => {
+test(`Add deps to package.json dependencies`, t => {
   TestUtils.call(context, 'configuring');
-  expect(context.mergeJson['package.json'].dependencies.classnames).to.equal('^2.2.5');
-  expect(context.mergeJson['package.json'].dependencies['react-dom']).to.equal('^15.0.1');
-  expect(context.mergeJson['package.json'].dependencies['react-redux']).to.equal('https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.js');
-  expect(context.mergeJson['package.json'].dependencies.redux).to.equal('https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.js');
-  expect(context.mergeJson['package.json'].dependencies['es6-shim']).to.equal('^0.35.0');
-  expect(context.mergeJson['package.json'].dependencies['todomvc-app-css']).to.equal('^2.0.4');
+  t.is(context.mergeJson['package.json'].dependencies.classnames, '^2.2.5');
+  t.is(context.mergeJson['package.json'].dependencies['react-dom'], '^15.0.1');
+  t.is(context.mergeJson['package.json'].dependencies['react-redux'], 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.js');
+  t.is(context.mergeJson['package.json'].dependencies.redux, 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.js');
+  t.is(context.mergeJson['package.json'].dependencies['es6-shim'], '^0.35.0');
+  t.is(context.mergeJson['package.json'].dependencies['todomvc-app-css'], '^2.0.4');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/classnames'], '^0.0.31');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/react-redux'], '^4.4.32');
 });
 
 test(`Call this.copyTemplate 13 times`, t => {
@@ -68,4 +70,3 @@ test(`Call this.copyTemplate 14 times when js is 'typescript'`, t => {
   expect(spy).to.have.been.called.exactly(files.length + 1);
   files.filter(file => file !== 'src/index.css').forEach(file => t.true(context.copyTemplate[file].length > 0));
 });
-

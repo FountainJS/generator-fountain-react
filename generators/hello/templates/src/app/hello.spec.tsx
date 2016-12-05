@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 <% if (modules !== 'inject') { -%>
 import * as React from 'react';
 import * as TestUtils from 'react-addons-test-utils';

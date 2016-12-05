@@ -49,30 +49,28 @@ module.exports = fountain.Base.extend({
         dependencies: {
           'react': '^15.0.1',
           'react-dom': '^15.0.1'
+        },
+        devDependencies: {
+          'react-addons-test-utils': '^15.0.1',
+          '@types/react': '^0.14.39',
+          '@types/react-dom': '^0.14.17',
+          '@types/react-addons-test-utils': '^0.14.15'
         }
       });
 
       if (this.props.router === 'router') {
-        if (this.props.modules === 'inject') {
-          this.mergeJson('package.json', {
-            dependencies: {
-              'react-router': 'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.4.1/ReactRouter.min.js'
-            }
-          });
-        } else {
-          this.mergeJson('package.json', {
-            dependencies: {
-              'react-router': '^2.4.0'
-            }
-          });
-        }
+        const routerVersion = this.props.modules === 'inject' ?
+          'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.4.1/ReactRouter.min.js' :
+          '^2.4.0';
+        this.mergeJson('package.json', {
+          dependencies: {
+            'react-router': routerVersion
+          },
+          devDependencies: {
+            '@types/react-router': '^2.0.37'
+          }
+        });
       }
-
-      this.mergeJson('package.json', {
-        devDependencies: {
-          'react-addons-test-utils': '^15.0.1'
-        }
-      });
     },
 
     babel() {

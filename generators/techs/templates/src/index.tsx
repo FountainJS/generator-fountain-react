@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import 'es6-promise';
 
 import * as React from 'react';

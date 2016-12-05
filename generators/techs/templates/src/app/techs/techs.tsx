@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 import * as React from 'react';
 import * as axios from 'axios';
 
@@ -47,7 +45,7 @@ export class Techs extends React.Component<ITechsProps, ITechsState> {
         <h2 style={styles.h2}>
           Cooked with all these awesome technologies:
         </h2>
-        <div style={styles.techs}>
+        <div style={styles.techs as any}>
           {this.state.techs.map((tech: Tech, i: number) => (
             <TechComponent key={i} tech={tech}/>
           ))}

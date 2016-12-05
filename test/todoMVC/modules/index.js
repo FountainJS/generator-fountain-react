@@ -38,14 +38,15 @@ test.before(() => {
   process.chdir('../../../');
 });
 
-test(`Add deps to package.json dependencies`, () => {
+test(`Add deps to package.json dependencies`, t => {
   TestUtils.call(context, 'configuring');
-  expect(context.mergeJson['package.json'].dependencies.classnames).to.equal('^2.2.5');
-  expect(context.mergeJson['package.json'].dependencies['react-dom']).to.equal('^15.0.1');
-  expect(context.mergeJson['package.json'].dependencies['react-redux']).to.equal('^4.4.5');
-  expect(context.mergeJson['package.json'].dependencies.redux).to.equal('^3.5.1');
-  expect(context.mergeJson['package.json'].dependencies['es6-shim']).to.equal('^0.35.0');
-  expect(context.mergeJson['package.json'].dependencies['todomvc-app-css']).to.equal('^2.0.4');
+  t.is(context.mergeJson['package.json'].dependencies.classnames, '^2.2.5');
+  t.is(context.mergeJson['package.json'].dependencies['react-dom'], '^15.0.1');
+  t.is(context.mergeJson['package.json'].dependencies['react-redux'], '^4.4.5');
+  t.is(context.mergeJson['package.json'].dependencies.redux, '^3.5.1');
+  t.is(context.mergeJson['package.json'].dependencies['es6-shim'], '^0.35.0');
+  t.is(context.mergeJson['package.json'].dependencies['todomvc-app-css'], '^2.0.4');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/classnames'], '^0.0.31');
 });
 
 test(`Call this.copyTemplate 12 times`, t => {
@@ -69,4 +70,3 @@ test(`Call this.copyTemplate 13 times when js is 'typescript'`, t => {
   expect(spy).to.have.been.called.exactly(files.length + 1);
   files.filter(file => file !== 'src/index.css').forEach(file => t.true(context.copyTemplate[file].length > 0));
 });
-

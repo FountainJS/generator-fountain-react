@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
-
 /* tslint:disable:no-unused-variable */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -14,7 +12,7 @@ describe('Footer', () => {
 <% } else { -%>
     const footer = TestUtils.renderIntoDocument(<Footer/>);
 <% } -%>
-    const footerNode = ReactDOM.findDOMNode(footer);
+    const footerNode = ReactDOM.findDOMNode(footer as React.ReactInstance);
     expect(footerNode.tagName).toEqual('FOOTER');
   });
 });

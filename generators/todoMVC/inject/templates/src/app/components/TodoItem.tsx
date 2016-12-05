@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/index.d.ts" />
-
 interface ITodoItemProps {
   todo: any;
   editTodo: (id: string, text: string) => void;
