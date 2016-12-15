@@ -97,12 +97,8 @@ module.exports = fountain.Base.extend({
 
     const modules = this.props.sample === 'todoMVC' ? `/${this.props.modules === 'inject' ? 'inject' : 'modules'}` : '';
 
-    this.composeWith(`fountain-react:${this.props.sample}`, {options}, {
-      local: require.resolve(`../${this.props.sample}${modules}`)
-    });
-    this.composeWith('fountain-gulp', {options}, {
-      local: require.resolve('generator-fountain-gulp/generators/app')
-    });
+    this.composeWith(require.resolve(`../${this.props.sample}${modules}`), options);
+    this.composeWith(require.resolve('generator-fountain-gulp/generators/app'), options);
   },
 
   writing() {
