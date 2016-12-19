@@ -29,8 +29,8 @@ test(`Call this.composeWith twice and add 'inject' prefix when sample is 'todoMV
     skipCache: context.props.skipCache
   };
   expect(spy).to.have.been.called.twice();
-  expect(spy).to.have.been.called.with(`fountain-react:todoMVC`, {options}, {local: require.resolve('../../generators/todoMVC/inject')});
-  expect(spy).to.have.been.called.with(`fountain-gulp`, {options}, {local: require.resolve('generator-fountain-gulp/generators/app')});
+  expect(spy).to.have.been.called.with(require.resolve('../../generators/todoMVC/inject'), options);
+  expect(spy).to.have.been.called.with(require.resolve('generator-fountain-gulp/generators/app'), options);
 });
 
 test(`Call this.composeWith twice and add 'modules' prefix when sample is 'todoMVC' and modules is 'modules'`, () => {
@@ -49,8 +49,8 @@ test(`Call this.composeWith twice and add 'modules' prefix when sample is 'todoM
     skipCache: context.props.skipCache
   };
   expect(spy).to.have.been.called.twice();
-  expect(spy).to.have.been.called.with(`fountain-react:todoMVC`, {options}, {local: require.resolve('../../generators/todoMVC/modules')});
-  expect(spy).to.have.been.called.with(`fountain-gulp`, {options}, {local: require.resolve('generator-fountain-gulp/generators/app')});
+  expect(spy).to.have.been.called.with(require.resolve('../../generators/todoMVC/modules'), options);
+  expect(spy).to.have.been.called.with(require.resolve('generator-fountain-gulp/generators/app'), options);
 });
 
 test(`Call this.composeWith twice and add no prefix when sample is different of 'todoMVC'`, () => {
@@ -69,6 +69,6 @@ test(`Call this.composeWith twice and add no prefix when sample is different of 
     skipCache: context.props.skipCache
   };
   expect(spy).to.have.been.called.twice();
-  expect(spy).to.have.been.called.with(`fountain-react:techs`, {options}, {local: require.resolve('../../generators/techs')});
-  expect(spy).to.have.been.called.with(`fountain-gulp`, {options}, {local: require.resolve('generator-fountain-gulp/generators/app')});
+  expect(spy).to.have.been.called.with(require.resolve('../../generators/techs'), options);
+  expect(spy).to.have.been.called.with(require.resolve('generator-fountain-gulp/generators/app'), options);
 });
