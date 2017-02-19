@@ -24,7 +24,7 @@ module.exports = React.createClass({
     return (
       <header style={styles.header}>
         <p style={styles.title}>
-          <a href="https://github.com/FountainJS/generator-fountain-webapp" target="_blank">
+          <a href="https://github.com/FountainJS/generator-fountain-webapp" target="_blank" rel="noopener noreferrer">
             Fountain Generator
           </a>
         </p>

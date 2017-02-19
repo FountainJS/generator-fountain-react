@@ -1,3 +1,5 @@
+/* eslint "react/no-find-dom-node": "off" */
+
 'use strict';
 
 var React = require('react');
