@@ -54,6 +54,10 @@
   },
   "license": "MIT",
   "eslintConfig": {
-    "extends": "xo-space/esnext"
+    "extends": "xo-space/esnext",
+    "rules": {
+      "func-names": ["error", "as-needed"],
+      "quote-props": ["error", "consistent"]
+    }
   }
 }
