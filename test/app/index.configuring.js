@@ -34,25 +34,25 @@ test('Call this.config.set twice', () => {
 test(`Add 'react' to package.json dependencies`, t => {
   context.props = {router: 'none'};
   TestUtils.call(context, 'configuring.pkg');
-  t.is(context.mergeJson['package.json'].dependencies.react, '^15.0.1');
-  t.is(context.mergeJson['package.json'].dependencies['react-dom'], '^15.0.1');
-  t.is(context.mergeJson['package.json'].devDependencies['react-addons-test-utils'], '^15.0.1');
-  t.is(context.mergeJson['package.json'].devDependencies['@types/react'], '^0.14.39');
-  t.is(context.mergeJson['package.json'].devDependencies['@types/react-addons-test-utils'], '^0.14.15');
+  t.is(context.mergeJson['package.json'].dependencies.react, '^15.4.2');
+  t.is(context.mergeJson['package.json'].dependencies['react-dom'], '^15.4.2');
+  t.is(context.mergeJson['package.json'].devDependencies['react-addons-test-utils'], '^15.4.2');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/react'], '^15.0.11');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/react-addons-test-utils'], '^0.14.17');
 });
 
 test(`Add 'router' to package.json dependencies`, t => {
   context.props = {router: 'router', modules: 'webpack'};
   TestUtils.call(context, 'configuring.pkg');
-  t.is(context.mergeJson['package.json'].dependencies['react-router'], '^2.4.0');
-  t.is(context.mergeJson['package.json'].devDependencies['@types/react-router'], '^2.0.37');
+  t.is(context.mergeJson['package.json'].dependencies['react-router'], '^3.0.2');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/react-router'], '^3.0.3');
 });
 
 test(`Add 'router' cdn url to package.json dependencies`, t => {
   context.props = {router: 'router', modules: 'inject'};
   TestUtils.call(context, 'configuring.pkg');
-  t.is(context.mergeJson['package.json'].dependencies['react-router'], 'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.4.1/ReactRouter.min.js');
-  t.is(context.mergeJson['package.json'].devDependencies['@types/react-router'], '^2.0.37');
+  t.is(context.mergeJson['package.json'].dependencies['react-router'], 'https://cdnjs.cloudflare.com/ajax/libs/react-router/3.0.2/ReactRouter.min.js');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/react-router'], '^3.0.3');
 });
 
 test(`Add 'react' to '.babelrc' when modules is 'webpack'`, t => {

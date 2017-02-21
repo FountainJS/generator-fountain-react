@@ -1,3 +1,4 @@
+const path = require('path');
 const test = require('ava');
 const chai = require('chai');
 const expect = chai.expect;
@@ -23,18 +24,18 @@ test.before(() => {
   context = TestUtils.mock('techs');
   context.mergeJson['package.json'] = {};
   require('../../generators/techs/index');
-  process.chdir('../../');
+  process.chdir(path.resolve(__dirname, '../../'));
 });
 
 test(`Add axios to 'package.json' dependencies`, t => {
   TestUtils.call(context, 'configuring', {js: 'babel'});
-  t.is(context.mergeJson['package.json'].dependencies.axios, '^0.9.1');
+  t.is(context.mergeJson['package.json'].dependencies.axios, '^0.15.3');
 });
 
 test(`Add axios and es6-promise to 'package.json' dependencies when js is 'typescript'`, t => {
   TestUtils.call(context, 'configuring', {js: 'typescript'});
-  t.is(context.mergeJson['package.json'].dependencies.axios, '^0.9.1');
-  t.is(context.mergeJson['package.json'].dependencies['es6-promise'], '^3.1.2');
+  t.is(context.mergeJson['package.json'].dependencies.axios, '^0.15.3');
+  t.is(context.mergeJson['package.json'].dependencies['es6-promise'], '^4.0.5');
 });
 
 test(`Call this.copyTemplate 8 times`, t => {

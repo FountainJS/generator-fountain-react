@@ -1,3 +1,4 @@
+const path = require('path');
 const test = require('ava');
 const chai = require('chai');
 const expect = chai.expect;
@@ -34,19 +35,19 @@ const files = [
 test.before(() => {
   context = TestUtils.mock('todoMVC/inject');
   require('../../../generators/todoMVC/inject/index');
-  process.chdir('../../../');
+  process.chdir(path.resolve(__dirname, '../../../'));
 });
 
 test(`Add deps to package.json dependencies`, t => {
   TestUtils.call(context, 'configuring');
   t.is(context.mergeJson['package.json'].dependencies.classnames, '^2.2.5');
-  t.is(context.mergeJson['package.json'].dependencies['react-dom'], '^15.0.1');
-  t.is(context.mergeJson['package.json'].dependencies['react-redux'], 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.js');
-  t.is(context.mergeJson['package.json'].dependencies.redux, 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.js');
-  t.is(context.mergeJson['package.json'].dependencies['es6-shim'], '^0.35.0');
-  t.is(context.mergeJson['package.json'].dependencies['todomvc-app-css'], '^2.0.4');
-  t.is(context.mergeJson['package.json'].devDependencies['@types/classnames'], '^0.0.31');
-  t.is(context.mergeJson['package.json'].devDependencies['@types/react-redux'], '^4.4.32');
+  t.is(context.mergeJson['package.json'].dependencies['react-dom'], '^15.4.2');
+  t.is(context.mergeJson['package.json'].dependencies['react-redux'], 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.2/react-redux.js');
+  t.is(context.mergeJson['package.json'].dependencies.redux, 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.js');
+  t.is(context.mergeJson['package.json'].dependencies['es6-shim'], '^0.35.3');
+  t.is(context.mergeJson['package.json'].dependencies['todomvc-app-css'], '^2.0.6');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/classnames'], '^0.0.32');
+  t.is(context.mergeJson['package.json'].devDependencies['@types/react-redux'], '^4.4.36');
 });
 
 test(`Call this.copyTemplate 13 times`, t => {

@@ -4,17 +4,14 @@ module.exports = fountain.Base.extend({
   configuring() {
     this.mergeJson('package.json', {
       dependencies: {
-        axios: '^0.9.1'
-      },
-      devDependencies: {
-        '@types/axios': '^0.9.32'
+        axios: '^0.15.3'
       }
     });
 
     if (this.options.js === 'typescript') {
       this.mergeJson('package.json', {
         dependencies: {
-          'es6-promise': '^3.1.2'
+          'es6-promise': '^4.0.5'
         }
       });
     }

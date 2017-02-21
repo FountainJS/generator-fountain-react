@@ -47,27 +47,27 @@ module.exports = fountain.Base.extend({
     pkg() {
       this.mergeJson('package.json', {
         dependencies: {
-          'react': '^15.0.1',
-          'react-dom': '^15.0.1'
+          'react': '^15.4.2',
+          'react-dom': '^15.4.2'
         },
         devDependencies: {
-          'react-addons-test-utils': '^15.0.1',
-          '@types/react': '^0.14.39',
-          '@types/react-dom': '^0.14.17',
-          '@types/react-addons-test-utils': '^0.14.15'
+          'react-addons-test-utils': '^15.4.2',
+          '@types/react': '^15.0.11',
+          '@types/react-dom': '^0.14.23',
+          '@types/react-addons-test-utils': '^0.14.17'
         }
       });
 
       if (this.props.router === 'router') {
         const routerVersion = this.props.modules === 'inject' ?
-          'https://cdnjs.cloudflare.com/ajax/libs/react-router/2.4.1/ReactRouter.min.js' :
-          '^2.4.0';
+          'https://cdnjs.cloudflare.com/ajax/libs/react-router/3.0.2/ReactRouter.min.js' :
+          '^3.0.2';
         this.mergeJson('package.json', {
           dependencies: {
             'react-router': routerVersion
           },
           devDependencies: {
-            '@types/react-router': '^2.0.37'
+            '@types/react-router': '^3.0.3'
           }
         });
       }

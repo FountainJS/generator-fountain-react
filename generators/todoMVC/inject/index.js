@@ -5,15 +5,15 @@ module.exports = fountain.Base.extend({
     this.mergeJson('package.json', {
       dependencies: {
         'classnames': '^2.2.5',
-        'react-dom': '^15.0.1',
-        'react-redux': 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.js',
-        'redux': 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.js',
-        'todomvc-app-css': '^2.0.4',
-        'es6-shim': '^0.35.0'
+        'react-dom': '^15.4.2',
+        'react-redux': 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.2/react-redux.js',
+        'redux': 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.js',
+        'todomvc-app-css': '^2.0.6',
+        'es6-shim': '^0.35.3'
       },
       devDependencies: {
-        '@types/classnames': '^0.0.31',
-        '@types/react-redux': '^4.4.32'
+        '@types/classnames': '^0.0.32',
+        '@types/react-redux': '^4.4.36'
       }
     });
   },
