@@ -13,7 +13,7 @@ const styles = {
     fontWeight: 300,
     fontSize: '4rem',
     margin: '1rem'
-  },
+  } as React.CSSProperties,
   logo: {
     height: '12rem',
     backgroundColor: 'white',
@@ -24,7 +24,7 @@ const styles = {
     fontWeight: 300,
     fontSize: '2rem',
     margin: '.5rem'
-  }
+  } as React.CSSProperties
 };
 
 interface ITitleProps {};

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as axios from 'axios';
+import axios from 'axios';
 
 import {Tech, TechComponent} from './tech';
 
@@ -10,7 +10,7 @@ const styles = {
   h2: {
     fontWeight: 300,
     fontSize: '1.5rem'
-  },
+  } as React.CSSProperties,
   techs: {
     display: 'flex',
     flexDirection: 'row',
@@ -34,7 +34,7 @@ export class Techs extends React.Component<ITechsProps, ITechsState> {
   componentDidMount() {
     axios
       .get('app/techs/techs.json')
-      .then((response: Axios.AxiosXHR<Tech[]>) => {
+      .then(response => {
         this.setState({techs: response.data});
       });
   }
