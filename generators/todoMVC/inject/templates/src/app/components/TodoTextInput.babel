@@ -34,7 +34,7 @@ class TodoTextInput extends React.Component {
       <input
         className={
           classNames({
-            'edit': this.props.editing,
+            edit: this.props.editing,
             'new-todo': this.props.newTodo
           })}
         type="text"
